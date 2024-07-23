@@ -152,3 +152,37 @@ If you are looking for the Complete Typescript 2 Course - Build a REST API, the 
 
 ![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
 
+
+here is the launch.json in .vscode where config how to debug for regular code and its' unit test.
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },{
+            "name": "ng test",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:9876/debug.html",
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+              "webpack:/*": "${webRoot}/*",
+              "/./*": "${webRoot}/*",
+              "/src/*": "${webRoot}/*",
+              "/*": "*",
+              "/./~/*": "${webRoot}/node_modules/*"
+            }
+          }
+
+    ]
+}
+
